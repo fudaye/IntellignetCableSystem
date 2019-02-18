@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="63dp"
+    android:minHeight="63dp"
+    android:background="@color/color_FF1989FA">
+
+    <ImageView
+        android:id="@+id/back_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingRight="15dp"
+        android:src="@drawable/symbols_white_back"
+        android:layout_centerVertical="true"
+        android:paddingLeft="19dp"/>
+
+    <TextView
+        android:id="@+id/title_tv"
+        android:layout_toRightOf="@+id/back_iv"
+        android:layout_toLeftOf="@+id/right_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:textSize="26sp"
+        android:textColor="@color/white"/>
+
+    <TextView
+        android:id="@+id/right_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="15dp"
+        android:textSize="21sp"
+        android:textColor="@color/white"
+        android:paddingLeft="10dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:visibility="gone"/>
+
+    <RelativeLayout
+        android:id="@+id/scan_rl"
+        android:minWidth="96dp"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="8dp"
+        android:visibility="gone"
+        android:gravity="center"
+        android:background="@drawable/shape_scan_bg">
+
+        <ImageView
+            android:id="@+id/scan_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@drawable/scan" />
+
+        <TextView
+            android:layout_toRightOf="@+id/scan_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_centerVertical="true"
+            android:text="@string/scan"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+
+    </RelativeLayout>
+
+
+
+
+</RelativeLayout>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/text_name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:textSize="21sp"
+        android:textColor="@color/color_757575"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="28dp"/>
+
+    <EditText
+        android:id="@+id/text_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:background="@null"
+        android:textSize="21sp"
+        android:textColor="@color/color_FF4A4A4A"
+        android:maxLines="1"
+        android:inputType="text"
+        android:textCursorDrawable="@null"
+        android:ellipsize="end"
+        android:imeOptions="actionDone"
+        android:layout_marginRight="15dp"
+        android:paddingTop="6dp"
+        android:paddingBottom="6dp"/>
+
+</LinearLayout>

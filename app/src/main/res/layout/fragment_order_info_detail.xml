@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/detail_ll"
+    android:background="@color/color_F0F3F5"
+    android:orientation="vertical">
+
+    <include layout="@layout/fragment_title_bar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+    <LinearLayout
+        android:id="@+id/content_ll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="@drawable/shape_analyze_result_bg"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/status_tv"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:gravity="center"
+            android:textColor="@color/color_757575"
+            android:textSize="21sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_E6E6E6" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="15dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="10dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/mine_text_size_color"
+                    android:layout_height="42dp"
+                    android:text="@string/number_signs" />
+
+                <TextView
+                    style="@style/mine_text_size_color"
+                    android:layout_height="42dp"
+                    android:text="@string/dispatch_time" />
+
+                <TextView
+                    style="@style/mine_text_size_color"
+                    android:layout_height="42dp"
+                    android:text="@string/dispatch_name" />
+
+                <TextView
+                    style="@style/mine_text_size_color"
+                    android:layout_height="42dp"
+                    android:text="@string/place" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="10dp">
+
+                <TextView
+                    android:id="@+id/signs_number_tv"
+                    style="@style/mine_text_size_color"
+                    android:layout_height="42dp"
+                    android:textColor="@color/color_757575"/>
+
+                <TextView
+                    android:id="@+id/dispatch_time_tv"
+                    style="@style/mine_text_size_color1"
+                    android:layout_height="42dp"
+                    android:textColor="@color/color_757575"/>
+
+                <TextView
+                    android:id="@+id/dispatch_name_tv"
+                    style="@style/mine_text_size_color"
+                    android:layout_height="42dp"
+                    android:textColor="@color/color_757575" />
+
+                <TextView
+                    android:id="@+id/place_tv"
+                    style="@style/mine_text_size_color"
+                    android:layout_height="42dp"
+                    android:textColor="@color/color_757575"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/line_view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#999999"
+            />
+
+        <LinearLayout
+            android:id="@+id/epcs_llayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/status_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="8dp"
+        android:weightSum="2"
+        android:visibility="gone">
+
+        <Button
+            android:id="@+id/pass_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/shape_analyze_btn"
+            android:text="@string/pass"
+            android:textColor="@color/white"
+            android:textSize="21sp"
+            android:layout_marginRight="20dp"/>
+
+        <Button
+            android:id="@+id/reject_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/shape_mine_btn"
+            android:text="@string/reject"
+            android:textColor="@color/white"
+            android:textSize="21sp"
+           />
+
+    </LinearLayout>
+
+    </LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/hint_tv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/title_bar"
+        android:gravity="center"
+        android:textColor="@color/color_FF4A4A4A"
+        android:textSize="26sp"
+        android:visibility="gone" />
+
+</LinearLayout>

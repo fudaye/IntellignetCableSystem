@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_F0F3F5"
+    android:clickable="true">
+
+    <com.amap.api.maps.MapView
+        android:id="@+id/location_mv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <include
+        android:id="@+id/search_rl"
+        layout="@layout/location_search_layout"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"/>
+
+    <ListView
+        android:id="@+id/search_lv"
+        android:layout_below="@id/search_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:visibility="gone"/>
+
+
+    <Button
+        android:id="@+id/navi_btn"
+        android:visibility="gone"
+        android:layout_width="81dp"
+        android:layout_height="81dp"
+        android:layout_gravity="bottom|end"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_margin="26dp"
+        android:text="导航"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:background="@drawable/shape_scan_oval"/>
+
+
+</RelativeLayout>

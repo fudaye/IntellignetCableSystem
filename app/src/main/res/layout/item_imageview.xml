@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="160dp"
+    android:layout_height="160dp"
+    android:minWidth="160dp"
+    android:minHeight="160dp">
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:scaleType="fitXY"/>
+
+    <ImageView
+        android:id="@+id/delete_iv"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/photo_delete"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="4dp"
+        android:layout_marginRight="4dp"/>
+
+</RelativeLayout>

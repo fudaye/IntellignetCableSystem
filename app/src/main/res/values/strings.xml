@@ -1,0 +1,65 @@
+<resources>
+    <string name="app_name">智能电缆管理系统</string>
+    <string name="work_order">工单</string>
+    <string name="location">地图</string>
+    <string name="analyze">分析</string>
+    <string name="mine">我的</string>
+    <string name="all_order">全部工单</string>
+    <string name="pending_review">待审核</string>
+    <string name="reviewed">已审核</string>
+    <string name="rejected">已驳回</string>
+    <string name="check_for_updates">检测更新</string>
+    <string name="dispatch_list">派工单</string>
+    <string name="quit">退出</string>
+    <string name="intelligent_analyze">智能分析</string>
+    <string name="fault">故障：</string>
+    <string name="reason">原因：</string>
+    <string name="processing_result">处理结果：</string>
+    <string name="place">线路名称：</string>
+    <string name="login_name">用户名</string>
+    <string name="login_password">密码</string>
+    <string name="login">登录</string>
+    <string name="register">注册</string>
+    <string name="signs_number">标识牌数量</string>
+    <string name="please_input_signs_number">请输入标识牌数量</string>
+    <string name="place_sheet">位置</string>
+    <string name="please_input_place_sheet">请输入位置</string>
+    <string name="assign">指派</string>
+    <string name="dispatch_sheet">派工单</string>
+    <string name="worksheet_info">工单信息</string>
+    <string name="worksheet_management">工单管理</string>
+    <string name="scan">扫描</string>
+    <string name="lighting_confirm">亮灯确认</string>
+    <string name="number_signs">标示牌数量：</string>
+    <string name="dispatch_time">派发时间：</string>
+    <string name="dispatch_name">派发人：</string>
+    <string name="worksheet_detail">工单详情</string>
+    <string name="submit">提交</string>
+    <string name="worksheet_status">工单状态</string>
+    <string name="picture_info">图片信息</string>
+    <string name="pass">通过</string>
+    <string name="reject">驳回</string>
+    <string name="unexecuted">未执行</string>
+    <string name="submission">正在提交</string>
+    <string name="finished">已完成</string>
+    <string name="status">状态</string>
+    <string name="query_template">查询模板</string>
+    <string name="remember_password">记住密码</string>
+    <string name="signage_management">标识牌管理</string>
+    <string name="photograph">拍照</string>
+    <string name="choose_phone_album">从手机相册中选择</string>
+    <string name="cancel">取消</string>
+    <string name="data_loading">数据加载中...</string>
+    <string name="data_load_fail">数据加载失败</string>
+    <string name="not_data">暂无数据</string>
+    <string name="logon">登录中...</string>
+    <string name="dispatching">指派中...</string>
+    <string name="submiting">提交中...</string>
+
+    <string-array name="status">
+        <item>通过</item>
+        <item>驳回</item>
+    </string-array>
+
+    <item type="id" name="cable_id"></item>
+</resources>

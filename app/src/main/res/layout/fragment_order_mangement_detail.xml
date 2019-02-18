@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/detail_ll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_F0F3F5"
+    android:orientation="vertical">
+
+    <include layout="@layout/fragment_title_bar"
+        android:id="@+id/title"
+        />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/title"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btn_submit"
+        android:scrollbars="none"/>
+
+
+    <Button
+        android:id="@+id/btn_submit"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/color_FF1989FA"
+        android:layout_alignParentBottom="true"
+        android:textColor="@android:color/white"
+        android:visibility="gone"
+        android:text="提交"
+        android:textSize="20sp"
+        />
+
+    <TextView
+        android:id="@+id/hint_tv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textSize="26sp"
+        android:textColor="@color/color_FF4A4A4A"
+        android:gravity="center"
+        android:visibility="gone"/>
+
+</RelativeLayout>
