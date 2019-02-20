@@ -30,7 +30,7 @@
             android:maxLines="1"
             android:inputType="text"
             android:textSize="21sp"
-            android:hint="搜索基础台账"
+            android:hint="搜索工单信息"
             android:background="@null"
             android:textColor="@color/white"
             android:textCursorDrawable="@null"

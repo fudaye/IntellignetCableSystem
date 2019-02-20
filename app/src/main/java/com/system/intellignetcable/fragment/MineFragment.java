@@ -315,8 +315,10 @@ public class MineFragment extends BaseFragment implements  StringListPopupWindow
                     public void onSuccess(Response<String> response) {
                         AppVersionBean appVersionBean = gson.fromJson(response.body(), AppVersionBean.class);
                         if (appVersionBean.getMsg().equals(UrlUtils.METHOD_POST_SUCCESS)) {
-                            if (appVersionBean.getObj().getAppVersion() != null && !appVersionBean.getObj().getAppVersion().equals("V" + AppUtils.getVersionName(getActivity()))) {
+                            if (!appVersionBean.getObj().getAppVersion().equals(AppUtils.getVersionName(getActivity()))) {
                                 showUpdateDialog(appVersionBean.getObj().getAppUrl());
+                            }else{
+                                Toast.makeText(getActivity(), "已是最新版本", Toast.LENGTH_SHORT).show();
                             }
                         } else {
                             Toast.makeText(getActivity(), appVersionBean.getMsg(), Toast.LENGTH_SHORT).show();

@@ -98,7 +98,7 @@ public class EpcListActivity extends BaseActivity {
 
         setContentView(R.layout.activity_epc_list);
         ButterKnife.bind(this);
-        titleTv.setText("EPC列表");
+        titleTv.setText("设备列表");
         backIv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

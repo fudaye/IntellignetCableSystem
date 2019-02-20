@@ -109,6 +109,26 @@ public class NewOrderFragment extends BaseFragment implements AdapterView.OnItem
         setLoadingView(hintTv, refreshLayout);
         initData();
         setListener();
+        String s = "搜索";//0未执行 1 正在提交 2 待审核/已提交 3 已完成 4 已驳回
+        switch (mainActivity.getStatus()) {
+            case 0:
+                s += "未执行工单";
+                break;
+            case 1:
+                s += "正在提交工单";
+                break;
+            case 2:
+                s += "待审核工单";
+                break;
+            case 3:
+                s += "已完成工单";
+                break;
+            case 4:
+                s += "已驳回工单";
+                break;
+        }
+
+        searchEt.setHint(s);
         return view;
     }
 
@@ -186,9 +206,9 @@ public class NewOrderFragment extends BaseFragment implements AdapterView.OnItem
 
     private void getOrderList(int userId, int type, String pageNo, String pageSize, int status, String workAddress) {
         String url;
-        if(status == -1){
+        if (status == -1) {
             url = UrlUtils.TEST_URL + UrlUtils.METHOD_POST_WORK_ORDER_LIST + "?userId=" + userId + "&type=" + type + "&pageNo=" + pageNo + "&pageSize=" + pageSize + "&workAddress=" + workAddress;
-        }else{
+        } else {
             url = UrlUtils.TEST_URL + UrlUtils.METHOD_POST_WORK_ORDER_LIST + "?userId=" + userId + "&type=" + type + "&pageNo=" + pageNo + "&pageSize=" + pageSize + "&status=" + status + "&workAddress=" + workAddress;
         }
         OkGo.<String>post(url)
@@ -299,7 +319,7 @@ public class NewOrderFragment extends BaseFragment implements AdapterView.OnItem
         mainActivity.hideSoftInput(view);
         Intent intent = new Intent(mainActivity, OrderInfoDetailActivity.class);
         intent.putExtra(ParamUtil.WORK_ORDER_ID, list.get(position).getWorkOrderId());
-        intent.putExtra("status",mainActivity.getStatus());
+        intent.putExtra("status", mainActivity.getStatus());
         startActivity(intent);
     }
 

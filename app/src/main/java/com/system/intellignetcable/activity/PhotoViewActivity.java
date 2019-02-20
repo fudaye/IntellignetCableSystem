@@ -16,6 +16,7 @@ import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import uk.co.senab.photoview.PhotoView;
 
 /**
@@ -38,6 +39,11 @@ public class PhotoViewActivity extends BaseActivity {
         mTitleTv.setText("图片浏览");
         urls = (ArrayList<TImage>) getIntent().getSerializableExtra("url");
         mViewPager.setAdapter(new SamplePagerAdapter());
+    }
+
+    @OnClick(R.id.back_iv)
+    public void onViewClicked() {
+        finish();
     }
 
     private class SamplePagerAdapter extends PagerAdapter {
