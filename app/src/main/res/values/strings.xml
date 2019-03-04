@@ -45,7 +45,7 @@
     <string name="status">状态</string>
     <string name="query_template">查询模板</string>
     <string name="remember_password">记住密码</string>
-    <string name="signage_management">标识牌管理</string>
+    <string name="signage_management">设备详情</string>
     <string name="photograph">拍照</string>
     <string name="choose_phone_album">从手机相册中选择</string>
     <string name="cancel">取消</string>

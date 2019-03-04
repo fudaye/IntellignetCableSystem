@@ -1,14 +1,13 @@
 package com.system.intellignetcable.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.RadioButton;
-import android.widget.Toast;
 
 import com.amap.api.maps.offlinemap.OfflineMapCity;
 import com.amap.api.maps.offlinemap.OfflineMapManager;
@@ -89,12 +88,12 @@ public class MainActivity extends BaseActivity {
                 }
             }
             if(!hasBj){
-                Toast.makeText(MainActivity.this, "开始下载离线地图", Toast.LENGTH_SHORT).show();
+                Log.d(TAG,"开始下载离线地图");
                 amapManager.downloadByCityCode("010");
             }
         }catch (Exception e){
             e.printStackTrace();
-            Toast.makeText(MainActivity.this, "离线地图下载失败", Toast.LENGTH_SHORT).show();
+            Log.d(TAG,"离线地图下载失败");
         }
     }
 

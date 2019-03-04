@@ -275,7 +275,7 @@ public class LocationFragment extends BaseFragment implements LocationSource, AM
 
     private void chooseMyLocation(double la, double lo) {
         //设置缩放级别
-        aMap.moveCamera(CameraUpdateFactory.zoomTo(14));
+        aMap.moveCamera(CameraUpdateFactory.zoomTo(10));
         //将地图移动到定位点
         aMap.moveCamera(CameraUpdateFactory.changeLatLng(new LatLng(la, lo)));
         // 设置定位图层的配置，设置图标跟随状态（图标一直在地图中心）
@@ -309,7 +309,7 @@ public class LocationFragment extends BaseFragment implements LocationSource, AM
                 if (isFirstLoc) {
                     isFirstLoc = false;
                     //设置缩放级别
-                    aMap.moveCamera(CameraUpdateFactory.zoomTo(14));
+                    aMap.moveCamera(CameraUpdateFactory.zoomTo(10));
                     //将地图移动到定位点
                     aMap.moveCamera(CameraUpdateFactory.changeLatLng(new LatLng(mCurrentLat, mCurrentLon)));
                     //点击定位按钮 能够将地图的中心移动到定位点
