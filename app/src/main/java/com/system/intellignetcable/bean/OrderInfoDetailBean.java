@@ -178,9 +178,18 @@ public class OrderInfoDetailBean implements Serializable {
 
             private String epc;
             private String epcNo;
+            private String epcName;
             private String longitude;
             private String latitude;
             private String detailAddress;
+
+            public String getEpcName() {
+                return epcName;
+            }
+
+            public void setEpcName(String epcName) {
+                this.epcName = epcName;
+            }
 
             public String getEpc() {
                 return epc;

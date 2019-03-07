@@ -191,7 +191,7 @@ public class OrderInfoDetailActivity extends BaseActivity {
                                         TextView epcTv = view.findViewById(R.id.epc_tv);
                                         TextView addressTv = view.findViewById(R.id.address_tv);
                                         indexTv.setText((i + 1) + "");
-                                        epcTv.setText(epcId);
+                                        epcTv.setText("标识位号："+epcs.get(i).getEpcName());
                                         addressTv.setText("地址: " + epcs.get(i).getDetailAddress());
                                         view.setOnClickListener(new View.OnClickListener() {
                                             @Override

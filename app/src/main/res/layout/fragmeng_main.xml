@@ -58,14 +58,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:background="@drawable/shape_location_search_bg"
+        android:background="@drawable/shape_main_item_bg"
         android:orientation="horizontal"
         android:padding="10dp">
 
         <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@mipmap/ic_launcher" />
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/weizhixing" />
 
         <TextView
             android:layout_width="match_parent"
@@ -82,14 +82,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:background="@drawable/shape_location_search_bg"
+        android:background="@drawable/shape_main_item_bg"
         android:orientation="horizontal"
         android:padding="10dp">
 
         <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@mipmap/ic_launcher" />
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/zhengzaitijiao" />
 
         <TextView
             android:layout_width="match_parent"
@@ -106,14 +106,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:background="@drawable/shape_location_search_bg"
+        android:background="@drawable/shape_main_item_bg"
         android:orientation="horizontal"
         android:padding="10dp">
 
         <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@mipmap/ic_launcher" />
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/daishenhe" />
 
         <TextView
             android:layout_width="match_parent"
@@ -130,14 +130,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:background="@drawable/shape_location_search_bg"
+        android:background="@drawable/shape_main_item_bg"
         android:orientation="horizontal"
         android:padding="10dp">
 
         <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@mipmap/ic_launcher" />
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/yibohui" />
 
         <TextView
             android:layout_width="match_parent"
@@ -154,14 +154,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:background="@drawable/shape_location_search_bg"
+        android:background="@drawable/shape_main_item_bg"
         android:orientation="horizontal"
         android:padding="10dp">
 
         <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@mipmap/ic_launcher" />
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/yiwancheng" />
 
         <TextView
             android:layout_width="match_parent"
