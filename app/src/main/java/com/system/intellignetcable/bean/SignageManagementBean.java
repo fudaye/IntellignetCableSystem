@@ -45,6 +45,7 @@ public class SignageManagementBean implements Serializable {
         private String longitude;
         private String latitude;
         private Object detailAddress;
+        private String password;
         private List<TemplateValuesBean> templateValues;
 
         public int getWorkOrderId() {
@@ -85,6 +86,14 @@ public class SignageManagementBean implements Serializable {
 
         public void setLongitude(String longitude) {
             this.longitude = longitude;
+        }
+
+        public String getPassword() {
+            return password;
+        }
+
+        public void setPassword(String password) {
+            this.password = password;
         }
 
         public String getLatitude() {

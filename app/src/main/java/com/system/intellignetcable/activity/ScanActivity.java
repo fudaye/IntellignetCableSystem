@@ -17,8 +17,16 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
+import com.lzy.okgo.OkGo;
+import com.lzy.okgo.callback.StringCallback;
+import com.lzy.okgo.model.Response;
 import com.system.intellignetcable.R;
 import com.system.intellignetcable.adapter.ScanAdapter;
+import com.system.intellignetcable.bean.SignageManagementBean;
+import com.system.intellignetcable.util.ParamUtil;
+import com.system.intellignetcable.util.SharedPreferencesUtil;
+import com.system.intellignetcable.util.UrlUtils;
 import com.system.intellignetcable.util.Util;
 import com.uhf.scanlable.UHfData;
 
@@ -75,8 +83,8 @@ public class ScanActivity extends BaseActivity implements AdapterView.OnItemClic
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_scan);
         ButterKnife.bind(this);
-        isEdit = getIntent().getBooleanExtra("isEdit",false);
-        mWorkId = getIntent().getIntExtra("workId",-1);
+        isEdit = getIntent().getBooleanExtra("isEdit", false);
+        mWorkId = getIntent().getIntExtra("workId", -1);
         initData();
         Util.initSoundPool(this);
     }
@@ -89,7 +97,16 @@ public class ScanActivity extends BaseActivity implements AdapterView.OnItemClic
         scanAdapter.setOnBtnClickListener(new ScanAdapter.onBtnClickListener() {
             @Override
             public void onClick(String epcId) {
-                lighting(epcId);
+                if (isConnected) {
+                    showProgressLoading();
+                    signageManagementDetail(epcId);
+                } else {
+                    Toast.makeText(ScanActivity.this, "不是串口设备，无法亮灯",
+                            Toast.LENGTH_SHORT).show();
+                }
+
+
+//                lighting(epcId);
             }
         });
         scanLv.setAdapter(scanAdapter);
@@ -149,8 +166,8 @@ public class ScanActivity extends BaseActivity implements AdapterView.OnItemClic
         if (data.size() > 0) {
             intent.putExtra("epcId", data.get(position).strEPC);
         }
-        intent.putExtra("workId",mWorkId);
-        intent.putExtra("isEdit",isEdit);
+        intent.putExtra("workId", mWorkId);
+        intent.putExtra("isEdit", isEdit);
         startActivity(intent);
     }
 
@@ -304,21 +321,21 @@ public class ScanActivity extends BaseActivity implements AdapterView.OnItemClic
         }
     };
 
-    private void lighting(final String etcId) {
+    private void lighting(final String etcId, final String pwd) {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                boolean sendCmdA1 = UHfData.UHfGetData.sendCmdA1(etcId, "12345678", 25);
+                boolean sendCmdA1 = UHfData.UHfGetData.sendCmdA1(etcId, pwd, 25);
                 if (sendCmdA1) {
                     runOnUiThread(new Runnable() {
                         public void run() {
-                            Toast.makeText(getApplication(),"亮灯成功",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplication(), "亮灯成功", Toast.LENGTH_SHORT).show();
                         }
                     });
                 } else {
                     runOnUiThread(new Runnable() {
                         public void run() {
-                            Toast.makeText(getApplication(),"亮灯失败",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplication(), "亮灯失败", Toast.LENGTH_SHORT).show();
                         }
                     });
                 }
@@ -352,6 +369,33 @@ public class ScanActivity extends BaseActivity implements AdapterView.OnItemClic
             data.add(itm);
         }
         scanAdapter.setData(data);
+    }
+
+
+    private void signageManagementDetail(final String epc) {
+        OkGo.<String>post(UrlUtils.TEST_URL + UrlUtils.SIGNBOARDDETAIL)
+                .tag(this)
+                .headers("token", (String) SharedPreferencesUtil.get(this, ParamUtil.TOKEN, ""))
+                .params("epc", epc)
+                .execute(new StringCallback() {
+                    @Override
+                    public void onSuccess(Response<String> response) {
+                        hideProgressLoading();
+                        SignageManagementBean signageManagementBean = new Gson().fromJson(response.body(), SignageManagementBean.class);
+                        if (signageManagementBean.getMsg().equals(UrlUtils.METHOD_POST_SUCCESS)) {
+                            String pwd = signageManagementBean.getSignBoard().getPassword();
+                            lighting(epc, pwd);
+                        } else {
+                            Toast.makeText(ScanActivity.this, signageManagementBean.getMsg(), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+
+                    @Override
+                    public void onError(Response<String> response) {
+                        hideProgressLoading();
+                        Toast.makeText(ScanActivity.this, "请求错误！" + response.code() + "-------" + response.message(), Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
 
 }
