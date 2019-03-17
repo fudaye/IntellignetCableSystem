@@ -169,6 +169,7 @@ public class SignageManagementActivity extends TakePhotoActivity implements Imag
                         hintTv.setVisibility(View.GONE);
                         recyclerView.setVisibility(View.VISIBLE);
                         signageManagementBean = gson.fromJson(response.body(), SignageManagementBean.class);
+                        signageOrderInfoAdapter.setEpcName(signageManagementBean.getSignBoard().getEpcName());
                         if (signageManagementBean.getMsg().equals(UrlUtils.METHOD_POST_SUCCESS)) {
                             if (signageManagementBean.getSignBoard().getTemplateValues() != null && signageManagementBean.getSignBoard().getTemplateValues().size() > 0) {
                                 templateValuesBeanList.addAll(signageManagementBean.getSignBoard().getTemplateValues());
@@ -215,6 +216,7 @@ public class SignageManagementActivity extends TakePhotoActivity implements Imag
                         double lon = TextUtils.isEmpty(signageManagementBean.getSignBoard().getLongitude()) ? 0.0 : Double.parseDouble(signageManagementBean.getSignBoard().getLongitude());
                         signageOrderInfoAdapter.setmCurrentLat(lat);
                         signageOrderInfoAdapter.setmCurrentLon(lon);
+                        signageOrderInfoAdapter.setEpcName(signageManagementBean.getSignBoard().getEpcName());
                         if (signageManagementBean.getMsg().equals(UrlUtils.METHOD_POST_SUCCESS)) {
                             if (signageManagementBean.getSignBoard().getTemplateValues() != null && signageManagementBean.getSignBoard().getTemplateValues().size() > 0) {
                                 templateValuesBeanList.addAll(signageManagementBean.getSignBoard().getTemplateValues());

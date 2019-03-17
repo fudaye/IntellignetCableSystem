@@ -46,6 +46,16 @@ public class SignageManagementBean implements Serializable {
         private String latitude;
         private Object detailAddress;
         private String password;
+        private String epcName;
+
+        public String getEpcName() {
+            return epcName;
+        }
+
+        public void setEpcName(String epcName) {
+            this.epcName = epcName;
+        }
+
         private List<TemplateValuesBean> templateValues;
 
         public int getWorkOrderId() {

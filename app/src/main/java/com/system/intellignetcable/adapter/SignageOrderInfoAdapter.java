@@ -84,6 +84,7 @@ public class SignageOrderInfoAdapter extends RecyclerView.Adapter implements Loc
     private Bundle savedInstanceState;
     private String mCurrentAdress;
     private boolean isEdit;
+    private String mEpcName;//标识位号 用于显示
 
     public double getmCurrentLat() {
         return mCurrentLat;
@@ -212,7 +213,12 @@ public class SignageOrderInfoAdapter extends RecyclerView.Adapter implements Loc
             }
             ((TextHolder) holder).textEt.setTag(R.id.cable_id, position);
             ((TextHolder) holder).textNameTv.setText(fieldName + ":");
-            ((TextHolder) holder).textEt.setText(fieldValue);
+            if("标识位号".equals(fieldName)){
+                ((TextHolder) holder).textEt.setText(mEpcName);
+            }else{
+                ((TextHolder) holder).textEt.setText(fieldValue);
+            }
+
             if (((TextHolder) holder).textEt.getTag() instanceof TextWatcher) {
                 ((TextHolder) holder).textEt.removeTextChangedListener((TextWatcher) ((TextHolder) holder).textEt.getTag());
             }
@@ -494,6 +500,9 @@ public class SignageOrderInfoAdapter extends RecyclerView.Adapter implements Loc
         }
     }
 
+    public void setEpcName(String epcName) {
+        mEpcName = epcName;
+    }
 
     private void downLoadMapPic(String langitude, String longitude) {
         //http://restapi.amap.com/v3/staticmap?location=116.481485,39.990464&zoom=15&size=450*300
