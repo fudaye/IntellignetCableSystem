@@ -1,6 +1,7 @@
 package com.system.intellignetcable.adapter;
 
 import android.content.Context;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -71,7 +72,8 @@ public class EpcListAdapter extends BaseAdapter {
         }
         final MapDataDetailBean.ListBean listBean = list.get(position);
         viewHolder.indexTv.setText((position + 1) + "");
-        viewHolder.epcTv.setText(listBean.getEpc());
+        String s = TextUtils.isEmpty(listBean.getEpcName())?"暂无":listBean.getEpcName();
+        viewHolder.epcTv.setText("线路名称:"+ s);
         viewHolder.addressTv.setText("地址: " + listBean.getDetailAddress());
         viewHolder.naviBtn.setOnClickListener(new View.OnClickListener() {
             @Override

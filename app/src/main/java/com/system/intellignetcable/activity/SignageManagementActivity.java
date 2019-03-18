@@ -417,13 +417,13 @@ public class SignageManagementActivity extends TakePhotoActivity implements Imag
     }
 
     @Override
-    public void onClick() {
+    public void onClick(int position) {
         ArrayList<TImage> tImages = new ArrayList<>();
         for (PicStringBean psb : imageList) {
             TImage t = TImage.of(psb.getPath(), null);
             tImages.add(t);
         }
-        IntentHelper.jumpPhotoViewActivity(this, tImages);
+        IntentHelper.jumpPhotoViewActivity(this, tImages, position);
     }
 
     //弹出popupwindow

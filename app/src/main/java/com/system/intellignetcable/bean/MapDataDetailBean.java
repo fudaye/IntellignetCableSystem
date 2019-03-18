@@ -56,6 +56,15 @@ public class MapDataDetailBean implements Serializable{
         private String detailAddress;
         private String latitude;
         private String longitude;
+        private String epcName;
+
+        public String getEpcName() {
+            return epcName;
+        }
+
+        public void setEpcName(String epcName) {
+            this.epcName = epcName;
+        }
 
         public String getEpc() {
             return epc;

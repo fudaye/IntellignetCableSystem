@@ -33,9 +33,10 @@ public class IntentHelper {
         jumpScanActivity(context, isEdit, -1);
     }
 
-    public static void jumpPhotoViewActivity(Context context, ArrayList<TImage> url) {
+    public static void jumpPhotoViewActivity(Context context, ArrayList<TImage> url , int  position) {
         Intent intent = new Intent(context, PhotoViewActivity.class);
         intent.putExtra("url", url);
+        intent.putExtra("position",position);
         context.startActivity(intent);
     }
 }

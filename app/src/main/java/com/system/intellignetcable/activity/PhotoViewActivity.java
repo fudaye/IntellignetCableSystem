@@ -38,7 +38,9 @@ public class PhotoViewActivity extends BaseActivity {
         ButterKnife.bind(this);
         mTitleTv.setText("图片浏览");
         urls = (ArrayList<TImage>) getIntent().getSerializableExtra("url");
+        int position = getIntent().getIntExtra("position", 0);
         mViewPager.setAdapter(new SamplePagerAdapter());
+        mViewPager.setCurrentItem(position);
     }
 
     @OnClick(R.id.back_iv)

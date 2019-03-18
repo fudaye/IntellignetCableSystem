@@ -84,7 +84,7 @@ public class ImageAdapter extends BaseAdapter {
                 @Override
                 public void onClick(View view) {
                     if(onAddOrDeleteImageClickListener != null){
-                        onAddOrDeleteImageClickListener.onClick();
+                        onAddOrDeleteImageClickListener.onClick(position);
                     }
                 }
             });
@@ -115,7 +115,7 @@ public class ImageAdapter extends BaseAdapter {
 
         void addImageClick();
 
-        void onClick();
+        void onClick(int position);
     }
 
 }
